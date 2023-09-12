@@ -20,9 +20,10 @@ def register(request):
                 obj.set_password(obj.password)
                 obj.save()
                 form.save()
+                return render(request, 'confirmation.html')
                 messages.success(request, 'You have been registered successfully.')
                 return redirect('index')
-                return render(request, 'index.html')
+                
             else:
                 return render(request, "register.html", {'form':form,'note':'password must match'})
     else:
