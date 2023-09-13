@@ -48,3 +48,35 @@ def register(request):
 @login_required
 def dashboardView(request):
     return render(request, "dashboard.html")
+
+@login_required
+def logoutView(request):
+    logout(request)
+    return redirect('index')
+
+@login_required
+def changePasswordView(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request,form.user)
+            return redirect('dashboard')
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+    return render(request, "password.html", {'form':form})
+
+
+@login_required
+def editprofileView(request):
+    if request.method == "POST":
+        form = ChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = ChangeForm(instance=request.user)
+    return render(request, "edit_profile.html", {'form':form})
+
+
