@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .forms import RegistrationForm
 from .forms import ChangeForm
 from django.contrib.auth import login,logout,authenticate, update_session_auth_hash

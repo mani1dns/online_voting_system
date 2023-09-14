@@ -33,6 +33,13 @@
     </script>
 
 
+<!-- Add these links to your HTML template -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
   </head>
 
   <body>
@@ -40,36 +47,36 @@
     <nav class="navbar bg-danger navbar-expand-md ">
       <div class="container">
         <div class="col-3 text-left pl-md-0">
-          <h3 class="text-white"> Online Voting System </h3>
+          <h3 class="text-white navbar-title"> Online Voting System </h3>
         </div>
         
         <div
-          class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
-          <ul class="navbar-nav justify-content-center  fw-bold">
+          class="collapse navbar-collapse justify-content-end col-md-8 navbar-collapse-3">
+          <ul class="navbar-nav fw-bold">
           {% if request.user.is_authenticated %}
 
               <li class="nav-item active">
-                  <a class="nav-link text-white" href="{% url 'dashboard' %}"> Dashboard </a>
+                  <a class="nav-link text-black" href="{% url 'dashboard' %}"> Dashboard </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link text-white" href="{% url 'editprofile' %}"> Edit Profile </a>
+                <a class="nav-link text-black" href="{% url 'editprofile' %}"> Edit Profile </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'changepass' %}">Change Password </a>
+                  <a class="nav-link text-black" href="{% url 'changepass' %}">Change Password </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'logout' %}"> Logout </a>
+                  <a class="nav-link text-black" href="{% url 'logout' %}"> Logout </a>
               </li>
 
           {% else %}
               <li class="nav-item active">
-                  <a class="nav-link text-white" href="{% url 'index' %}"> Home </a>
+                  <a class="nav-link text-black" href="{% url 'index' %}"> Home </a>
                 </li>
               <li class="nav-item ">
-                <a class="nav-link text-white" href="{% url 'login' %}"> Login </a>
+                <a class="nav-link text-black" href="{% url 'login' %}"> Login </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'register' %}">Register </a>
+                  <a class="nav-link text-black" href="{% url 'register' %}">Register </a>
               </li>
           {% endif %}
           </ul> 

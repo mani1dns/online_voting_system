@@ -1,5 +1,5 @@
 li:hover{
-    background-color: green;
+    background-color: rgb(239, 245, 239);
     border-radius: 10px;
-    border:3px solid grey;
+    border:3px solid rgb(3, 1, 1);
 }
